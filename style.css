@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+  background-color: black;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr 120px auto;
+      grid-template-rows: auto 1fr 120px auto;
+  -ms-grid-columns: 100px minmax(220px, 1fr);
+      grid-template-columns: 100px minmax(220px, 1fr);
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 560px) {
+  .grid {
+    -ms-grid-rows: auto 1fr 80px auto;
+        grid-template-rows: auto 1fr 80px auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    -ms-grid-rows: auto auto auto 3fr 1fr auto;
+        grid-template-rows: auto auto auto 3fr 1fr auto;
+    -ms-grid-columns: minmax(100px, 200px) 1fr;
+        grid-template-columns: minmax(100px, 200px) 1fr;
+  }
+}
+
+.logo {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  position: relative;
+  text-align: center;
+}
+
+.logo__icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: rgba(119, 45, 156, 0.5);
+  font-size: 60px;
+  padding: 15px;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    height: 100px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+}
+
+.title {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #e100ff, 0 0 82px #e100ff, 0 0 92px #e100ff, 0 0 102px #e100ff, 0 0 151px #e100ff;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    min-height: 80px;
+  }
+}
+
+.gallery {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 115px 15px 15px;
+}
+
+.gallery__header {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  font-size: 35px;
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-column: 2/-1;
+    grid-row: 1/-2;
+  }
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container__image {
+  width: 100%;
+  border-radius: 2%;
+}
+
+.image-container__name {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  text-align: center;
+  width: 70%;
+  height: 70%;
+  line-height: 90px;
+  background-color: rgba(119, 45, 156, 0.4);
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.image-container__name:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.contact {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  grid-column: 1/-1;
+  height: 60px;
+  padding: 0 15px;
+}
+
+.contact__aplication {
+  letter-spacing: 1px;
+}
+
+.contact__mail {
+  text-decoration: none;
+  color: pink;
+}
+
+@media (min-width: 1024px) {
+  .contact {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+  }
+}
+
+.footer {
+  grid-column: 1/-1;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
+  height: 120px;
+  padding: 0 15px;
+}
+
+.footer__email {
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    grid-column: 1/-1;
+    grid-row: 6/-1;
+  }
+}
+
+.name--bold {
+  color: pink;
+  font-weight: 700;
+}
+/*# sourceMappingURL=style.css.map */
